@@ -1,0 +1,93 @@
+.MainDiv{
+
+    margin: 0 auto;
+     background-color: #0b0811;
+     background-size: cover;
+   
+}
+
+.MainDiv h3{
+    padding-top: 20px;
+    padding-left: 70px;
+    color: aliceblue;
+    text-align: left;
+    font-size: 30px;
+}
+
+hr {
+    margin: 1rem 0;
+    color: aliceblue;
+    background-color: currentColor;
+    border: 0;
+    opacity: .25;
+    margin-left: 70px;
+    width: 60%;
+}
+
+.MainDiv h5{
+
+    padding-left: 70px;
+    color: aliceblue;
+    text-align: left;
+}
+
+
+.MainDiv p{
+    padding-left: 70px;
+    color: aliceblue;
+    text-align: left;
+    
+}
+
+table.dataTable tbody tr {
+    background-color: none;
+}
+
+table.dataTable tbody tr:hover{
+    background-color: none;
+}
+
+table.dataTable tbody th, table.dataTable tbody td{
+    color: white;
+}
+
+table.dataTable tbody tr {
+    background-color: #050011;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #272332;
+}
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: #272332;
+}
+
+    table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+        background-color: #050011;
+        
+    }
+
+
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: #272332;
+}
+
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+    border: none;
+}
+
+.black{
+    background-color: #050011;
+}
+
+.container{
+
+    width: 100%;
+
+}
+
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+    margin-top:30px;
+}

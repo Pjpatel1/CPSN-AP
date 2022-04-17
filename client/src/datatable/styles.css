@@ -1,0 +1,54 @@
+:root {
+    font-size: 14px;
+  }
+  
+  .thead,
+  tr {
+    background-color: honeydew;
+  }
+  
+  .tr,
+  th {
+    white-space: nowrap;
+    padding: 1rem;
+    text-align: left;
+    background-color: honeydew;
+  }
+  
+  tbody,
+  tr:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .tbody,
+  tr,
+  td {
+    white-space: nowrap;
+    width: 20%;
+    overflow-wrap: break-word;
+    padding: 0.5rem;
+  }
+
+  
+label {
+    display: inline-block;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+label {
+    cursor: default;
+    padding: 10px;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 3px;
+  padding: 5px;
+  background-color:rgb(189, 189, 189);
+  padding: 4px;
+}

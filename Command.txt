@@ -1,0 +1,17 @@
+npx kill-port 5008
+
+sudo systemctl start mongodb
+
+,
+  "building":"Shilp Epitome",
+  "floorNumber":"9",
+  "block":"B",
+  "officeNumber":"924",
+  "status":"Occupied",
+  "comName":"SA",
+  "email":"avis@gmail.com",
+  "phone":"9714809072",
+  "city":"Surat",
+  "state":"Gujarat",
+  "pincode":"395004",
+  "service":"IT"      

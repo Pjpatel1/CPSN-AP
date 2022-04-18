@@ -1,4 +1,5 @@
-import '../Login/login.css';
+import './login.css';
+import login_image from '../../src/photos/signUp.jpeg'
 
 const toggleForm = () => {
     const container = document.querySelector('.container');
@@ -17,7 +18,7 @@ const SignUp = () =>{
     <div className="formBx">
       <form action="" onSubmit={handleSubmit}>
         <h2>Create an account</h2>
-        <input type="text" name="" placeholder="Username" />
+        <input type="text" name="" placeholder="Username" autoComplete='off'/>
         <input type="email" name="" placeholder="Email Address" />
         <input type="password" name="" placeholder="Create Password" />
         <input type="password" name="" placeholder="Confirm Password" />
@@ -28,7 +29,7 @@ const SignUp = () =>{
         </p>
       </form>
     </div>
-    <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img2.jpg" alt="" /></div>
+    <div className="imgBx"><img src={login_image} alt="" /></div>
     </div>
     
     </>

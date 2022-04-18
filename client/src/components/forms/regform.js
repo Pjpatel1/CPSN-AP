@@ -19,7 +19,12 @@ function Regform()
         { 
           service: "Real Estate", 
           label: "Real Estate" 
-        }
+        },
+        { 
+            service: "Electronics", 
+            label: "Electronics" 
+        },
+
       ];
 
     const [listofUsers,setLisOfUsers] = useState([])
@@ -38,17 +43,10 @@ function Regform()
 
 
     const [category,setCategory] = useState(services);
- 
-    // const [category,setCategory] = useState(services.label);
-    // const ddlHandler = (e) => {
-    //     setCategory(e.label);
-    //     console.log(category);
-    // };
 
-    // setCategory([...category])
-   
+    const postUser = () =>{console.log(category)
 
-    const postUser = () =>{
+
         Axios.post("http://127.0.0.1:5008/register",{
             email,
             phone,
@@ -61,7 +59,7 @@ function Regform()
             city,
             state,
             pincode,
-            // category
+            category
             
         }).then((response)=>{
             setLisOfUsers([
@@ -78,7 +76,7 @@ function Regform()
                     city,
                     state,
                     pincode,
-                    // category
+                    category
                 },
             ])
             alert('USER CREATED');
@@ -165,7 +163,7 @@ function Regform()
                                 id="office-number" 
                                 name="office-number"  
                                 onChange={(e)=>{
-                                    setStatus(e.target.Floorvalue)
+                                    setStatus(e.target.value)
                                 }}
                                 placeholder="Status" 
                                 className='company-name' ></input>
@@ -288,9 +286,7 @@ function Regform()
                         showArrow 
                         // isObject={false} 
                         onRemove={(e)=>{console.log(e);}} 
-                        // onSelect={(services.map((e)=>(e.service)))}
-                        // onSelect={(category[Object.keys(category)])}
-                        onSelect={(e)=>setCategory({...category,service:e.target.value})}
+                        onSelect={(e)=>{setCategory(e);}}
                         options={services} displayValue="label" showCheckbox={true}                         />
                         <input type="submit" className='submit1' onClick={postUser}></input>
                 </div> 

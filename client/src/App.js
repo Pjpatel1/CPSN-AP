@@ -13,7 +13,7 @@ import Datatable from './components/Database';
 import Regform from './components/forms/regform';
 import Servicepage from '../src/components/Servicespage';
 import Admin from '../src/components/Admin/admin';
-import Login from './Login/login';
+import Login from './login/login';
 
 function App() {
   return ( 

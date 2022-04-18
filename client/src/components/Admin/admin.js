@@ -1,5 +1,7 @@
 import axios from "axios";
 import  React, {useState, useEffect} from 'react';
+import {services} from '../forms/regform';
+
 import '../Admin/table.css'
 
 function Admin(){
@@ -50,10 +52,10 @@ function Admin(){
                     <td data-th="City">{user.city}</td>
                     <td data-th="State">{user.state}</td>
                     <td data-th="Pincode">{user.pincode}</td>
-                    <td data-th="Service">{user.service}</td>
-
-                    {/* <td data-th="First Name">{user.firstName}</td> */}
-                    {/* <td data-th="Last Name">{user.lastName}</td> */}
+                    {/* <td data-th="Service"><a href={"/"+user.service}>{user.service.join(' ')}</a></td> */}
+         
+                    <td data-th="Service">{user.service.map((value,i)=>
+                    {return (<a href={"/"+value}>{value}&nbsp;</a>)})}</td>
                     </tr>                 
                 )
             })}

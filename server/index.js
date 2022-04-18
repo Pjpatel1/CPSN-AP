@@ -58,7 +58,7 @@ const userSchema = new mongoose.Schema({
     },
     status:{
         type:String,
-        default:'Unoccuiped',
+        default:"Unoccupied",
         enum:['Occupied','Unoccuiped']
     },
     comName:{
@@ -105,14 +105,10 @@ const userSchema = new mongoose.Schema({
     //     default:"NA",
     //     required:true
     // },
-    // service:{
-    //     type:Array,
-    //     "default":[]
-    // }
-    service:[{
-        type:String,
+    service:{
+        type:Array,
         "default":[]
-    }]
+    }
 })
 
 //Model
@@ -123,7 +119,12 @@ app.post('/register', jsonParser,
 function (req, res) {
 
 const createDocument = async()=>{
+    let services = []
+    eval(req.body).category.forEach(element => {
+        services.push(element.service)
+    });
     try{
+        console.log(eval(req.body))
         const data = new tableData({
             building:eval(req.body).building,
             floorNumber:eval(req.body).floorNumber,
@@ -136,15 +137,11 @@ const createDocument = async()=>{
             city:eval(req.body).city,
             state:eval(req.body).state,
             pincode:eval(req.body).pincode,
-            service:[(eval(req.body)).service]
-            // firstName : eval(req.body).firstName,
-            // lastName : eval(req.body).lastName,            
-            // landmark:eval(req.body).landmark,   
+            service:services  
         })
         const result = await tableData.insertMany(data);
         console.log('CREATE DOCUMENT');
         console.log(result);     
-        // console.log(req.body);   
     }
     catch(e){
           console.log(e);
@@ -153,74 +150,6 @@ const createDocument = async()=>{
     }
     createDocument();
 })
-
-
-// app.post('/register', jsonParser, 
-// function (req, res) {
-
-// const createDocument = async()=>{
-//     let {building,floorNumber,block,officeNumber,status,comName,email,phone,city,state,pincode} = req.body;
-    
-//     try{
-//         const data = new tableData({
-//             building,
-//             floorNumber,
-//             block,
-//             officeNumber,
-//             status,
-//             comName,
-//             email,
-//             phone,
-//             city,            
-//             state,
-//             pincode,
-//             service
-            
-//             // firstName : eval(req.body).firstName,
-//             // lastName : eval(req.body).lastName,            
-//             // landmark:eval(req.body).landmark,   
-//         })
-//         const result = await data.save();
-//         res.status(200).json({
-//             status: 'Success',
-//             data : data
-//           })
-//         // console.log('CREATE DOCUMENT');
-//         console.log(result);        
-//     }
-//     catch(err){
-//         console.log(err)
-//         next(err)
-//       }
-
-//     }
-//     createDocument();
-// })
-
-
-
-
-
-
-// app.get('/getUsers',(req,res)=>{
-//     tableData.find({},(err,result)=>{
-//         if(err){
-//             res.json(err)
-//         }
-//         else{
-//             res.json(result);
-//         }
-//     })
-// })
-
-
-//Ii will add only via postman. Not from React Input
-// app.post('/register',async(req,res)=>{
-//     const users = req.body;
-//     const newUsers = new tableData(users);
-//     await newUsers.save();  
-//     res.json(users);
-//     })
     
 //MONGODB ---> REACT
 app.get('/getUsers',jsonParser,function (req,res) {

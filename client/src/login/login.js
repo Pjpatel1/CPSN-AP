@@ -1,5 +1,7 @@
-import '../Login/login.css';
+import './login.css';
 import SignUp from './SignUp'
+
+import login_image from '../../src/photos/building.jpeg'
 const toggleForm = () => {
     const container = document.querySelector('.container');
     container.classList.toggle('active');
@@ -12,10 +14,10 @@ const login = ()=>{
  
     return(
         <>
-         <section>
+         <section className='a'>
     <div className="container">
       <div className="user signinBx">
-        <div className="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
+        <div className="imgBx"><img className={{backgroundSize:'cover'}}src={login_image} alt="" /></div>
         <div className="formBx">
           <form action="" onSubmit={handleSubmit}>
             <h2>Sign In</h2>

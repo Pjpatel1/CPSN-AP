@@ -1,4 +1,4 @@
-import '../components/home.css';
+import '../components/home.scss';
 
 
 function Register ()

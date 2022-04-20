@@ -88,7 +88,7 @@ function Regform()
 
     return(
 
-        <>
+        <div className="background">
           <div className="form-heading">
                     SERVICE REGISTRATION
             </div>
@@ -292,7 +292,7 @@ function Regform()
                 </div> 
                 <div>
                 </div>     
-        </>
+        </div>
     )
 }
 export default Regform

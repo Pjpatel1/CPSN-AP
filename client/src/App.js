@@ -2,9 +2,9 @@ import './App.css';
 import React from 'react';
 
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
-import './components/home.css';
+import './components/home.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import "../src/components/home.css";
+import "../src/components/home.scss";
 import "./components/queries.css";
 import "./components/cities.css";
 import Home from './components/services';
